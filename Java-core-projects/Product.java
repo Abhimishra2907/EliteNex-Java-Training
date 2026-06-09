@@ -27,7 +27,17 @@
 	   "Category : " + category + "\n" ;
 	   
   }
-  
+  public boolean equals(Object obj	){
+	  if(this==obj)
+		  return true;
+	  
+	  if(this==null|| getClass() != obj.getClass())
+		  return false;
+	  
+	  Product  p = (Product)obj;
+	  return this.id == p.id;
+	  
+  }
   
   public static void main(String [] args){
 	  
@@ -36,11 +46,12 @@
             new Product(101,"Laptop",350000,"Electronic");
 
         Product p2 =
-            new Product(102,"iPhone",65000,"SmartPhone");
+            new Product(101,"iPhone",65000,"SmartPhone");
     
 	
   System.out.println(p1.toString());
   System.out.println(p2.toString());
+  System.out.println(p1.equals(p2));
   
   }
   }
