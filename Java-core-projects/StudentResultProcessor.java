@@ -52,15 +52,16 @@ class StudentResultProcessor{
 	}
 	
 	public void displayResult(){
-		System.out.println("\n ==== Student Result ===");
-		System.out.println(" RollNo. : " + rollNo);
-		System.out.println(" Name : " + name);
-		System.out.println(" Maths : " + maths);
-		System.out.println(" Science : " + science);
-		System.out.println(" English : " + english);
-		System.out.println(" CalculateTotal No. : " + calculateTotal());
-		System.out.println(" calculatePercentage : " + calculatePercentage());
-		System.out.println(" calculateGrade : "+  calculateGrade());
+		System.out.println("\n========== STUDENT RESULT ==========");
+		System.out.println(" Student RollNo. : " + rollNo);
+		System.out.println(" Student Name     : " + name);
+		System.out.println(" Maths Marks     : " + maths);
+		System.out.println(" Science Marks   : " + science);
+		System.out.println(" English Marks   : " + english);
+		System.out.println(" "); 
+		System.out.println(" Total Marks     : " + calculateTotal());
+        System.out.println(" Percentage      : " + calculatePercentage());
+		System.out.println(" Grade           : "+  calculateGrade()); 
 		
 		System.out.println(" ");
 		
@@ -73,7 +74,7 @@ class StudentResultProcessor{
 		int rollNo = sc.nextInt();
 		sc.nextLine();
 		
-		System.out.println("======= Student Result Process ====");
+	System.out.println("======= STUDENT RESULT PROCESSOR =======");
 		 
 		
 		
@@ -81,30 +82,41 @@ class StudentResultProcessor{
 		String name = sc.nextLine();
 		
 		
-		System.out.println("Enter Maths Marks : ");
-		int maths = sc.nextInt();
-	
-		if(maths<0||maths>100){
-			  System.out.println("Invalid Marks! Marks should be between 0 and 100.");
-               return;
-		 }
-		 
-		System.out.println("Enter Science Marks : ");
-		int science = sc.nextInt();
+		int maths;
+while(true){
+    System.out.print("Enter Maths Marks : ");
+    maths = sc.nextInt();
+
+    if(maths >= 0 && maths <= 100){
+        break;
+    }
+
+    System.out.println("Invalid Maths Marks! Please enter between 0 and 100.");
+}
 		
-		if(science<0||science>100){
-			  System.out.println("Invalid Marks! Marks should be between 0 and 100.");
-               return;
-		 }
-		 
+		 int science;
+while(true){
+    System.out.print("Enter Science Marks : ");
+    science = sc.nextInt();
+
+    if(science >= 0 && science <= 100){
+        break;
+    }
+
+    System.out.println("Invalid Science Marks! Please enter between 0 and 100.");
+}
 		
-		System.out.println("Enter english Marks : ");
-		int english = sc.nextInt();
-		
-		if(english<0||english>100){
-			  System.out.println("Invalid Marks! Marks should be between 0 and 100.");
-               return;
-		 }
+		int english;
+while(true){
+    System.out.print("Enter English Marks : ");
+    english = sc.nextInt();
+
+    if(english >= 0 && english <= 100){
+        break;
+    }
+
+    System.out.println("Invalid English Marks! Please enter between 0 and 100.");
+}
 		
 		StudentResultProcessor student = new  StudentResultProcessor(rollNo,name,maths,science,english);
 		
