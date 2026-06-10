@@ -48,6 +48,15 @@ public static void main(String [] args){
 	35000,
 	LocalDate.of(2026, 6, 9)
 	);
+	Employees emp3 =
+	new Employees
+	(103,
+	"Abhidev",
+	"it",
+	35000,
+	LocalDate.of(2026, 6, 9)
+	);
 	emp1.display();
 	emp2.display();
+	emp3.display();
 }}
