@@ -40,7 +40,7 @@ public class EmployeeManagementSystem {
 
         Scanner sc = new Scanner(System.in);
         ArrayList<Employees> employees = new ArrayList<>();
-while(true){
+  while(true){
 		
 		System.out.println("\n===== EMPLOYEE MANAGEMENT SYSTEM ====="); 
 		System.out.println("1. Add Employee");
@@ -58,10 +58,10 @@ while(true){
 		try{
 		System.out.println(" Enter Choise: ");
 		
-		int choise = sc.nextInt();
+		int choice = sc.nextInt();
 		sc.nextLine();
 		
-		    switch(choise){
+		    switch(choice){
 			    case 1 : {
 				System.out.println(" Enter Id : ");
                 int id =  sc.nextInt();
@@ -88,8 +88,8 @@ while(true){
 			  			  }
 			   case 2:{
 				   int count = 1;
+				  System.out.println(" No  Employee Data Employees");
                   
-				  System.out.println(" Display All Employees");
 				  for( Employees emp : employees ){
 					    System.out.println("\nEmployee #  " + count++  + emp.name);
 					  emp.display();
@@ -109,8 +109,71 @@ while(true){
 				   
 				   break;
 			   }
-				
+			  case 4: {
+
+                     System.out.println("Enter your Employee ID for update salary:");
+
+                     int upadateId = sc.nextInt();
+                      boolean found = false;
+
+                        for (Employees emp : employees) {
+
+                          if (emp.id == upadateId) {
+
+                            System.out.println("Please Enter your updated Salary");
+
+                             emp.salary = sc.nextDouble();
+
+                               System.out.println("Your salary is updated");
+
+                                found = true;
+                                    break;
+                                            }
+                                                  }
+
+                      if (!found) {
+                               System.out.println("Please enter a valid ID");
+                                      }
+
+                                      break;
+									  
+									  
+                                           }
+										   
+	 				 case 5: {
+         while(true){
+         System.out.print("Enter Employee ID to Search: ");
+	   
+	     if(employees.isEmpty()){
+		  System.out.println("No Employee available.");
+	    }
+        int searchId = sc.nextInt();
+     for(Employees e : employees){
+		 if( e.id == searchId){
+			   System.out.println("\nEmployee Found:");
+			   e.display();
+			  
+			  return;
+			 
+		 }
+		 else{
+			 System.out.println("Employee ID Not Found!");
+			 break;
+		 }
+		 
+	  
+  }
+          
+   
+					 }}
+
+case 11: {
+	System.out.println(" Successfully exit");
+	System.exit(0);
+	
 		    }
+}			   
+				
 		
 	    }
 		catch(InputMismatchException e){
