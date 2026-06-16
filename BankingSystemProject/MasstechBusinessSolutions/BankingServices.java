@@ -16,7 +16,7 @@ public class BankingServices {
         System.out.println("Hello! Welcome to Banking Services.");
     }
 
-    public void createNewAccount() {
+    public void createAccount() {
         System.out.println("You have selected 'Create New Account'.");
         System.out.println("Please fill in all the required details to create a new account. \n");
         System.out.println(" Please Enter the name : ");
@@ -48,15 +48,15 @@ public class BankingServices {
         Random random = new Random();
         int accountNumber = 10000 + random.nextInt(90000);
 
-        System.out.print("Enter Opening Balance: ₹");
-        double openingBalance = sc.nextDouble();
+    System.out.print("Enter Opening Balance: ₹");
+    double openingBalance = sc.nextDouble();
 
-        if (accountType == BankAccount.AccountType.SAVINGACCOUNT
-                && openingBalance < 6000) {
+    if (accountType == BankAccount.AccountType.SAVINGACCOUNT
+            && openingBalance < 6000) {
 
-            System.out.println("Saving Account requires a minimum opening balance of ₹6000.");
-            return;
-        }
+        System.out.println("Saving Account requires a minimum opening balance of ₹6000.");
+        return;
+    }
 
         BankAccount account = new BankAccount(
                 accountNumber,
@@ -102,9 +102,9 @@ public class BankingServices {
         return null;
 
     }
-        public void deposit (BankAccount account){
+        public void depositMoney (BankAccount account){
 
-            System.out.print("Enter Initial Deposit: ₹");
+            System.out.print("Enter Initial Deposit Money: ₹");
             double depositAmount = sc.nextLong();
 
             account.setAccountBalance(
@@ -116,7 +116,7 @@ public class BankingServices {
             System.out.println("Your Account Balance: ₹" + account.getAccountBalance());
 
             account.getTransactions().add(
-                    "Deposit : +₹" + depositAmount +
+                    "Deposit Money : +₹" + depositAmount +
                             " | Balance : ₹" + account.getAccountBalance()
             );
         }

@@ -65,8 +65,8 @@ public void accountDetails(){
     System.out.println("   Account Type :" + accountType);
 
 };
-    private List<String> transactions = new ArrayList<>();
+    private List<String> customBanktransaction = new ArrayList<>();
     public List<String> getTransactions() {
-        return transactions;
+        return customBanktransaction;
     }
 }

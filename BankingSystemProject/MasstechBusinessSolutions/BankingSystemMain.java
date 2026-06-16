@@ -2,7 +2,7 @@ package MasstechBusinessSolutions;
 
 import java.util.Scanner;
 
-public class BankingSystem {
+public class BankingSystemMain {
 
     public void displayDetails() {
 
@@ -17,7 +17,7 @@ public class BankingSystem {
 
         Scanner sc = new Scanner(System.in);
 
-        BankingSystem bank = new BankingSystem();
+        BankingSystemMain bank = new BankingSystemMain();
         BankingServices bankingServices = new BankingServices();
 
         BankAccount account = null;
@@ -32,7 +32,7 @@ public class BankingSystem {
 
                 case 1:
                     sc.nextLine();
-                    bankingServices.createNewAccount();
+                    bankingServices.createAccount();
                     break;
 
                 case 2:
@@ -57,7 +57,7 @@ public class BankingSystem {
                             switch (option) {
 
                                 case 1:
-                                    bankingServices.deposit(account);
+                                    bankingServices.depositMoney(account);
                                     break;
 
                                 case 2:
